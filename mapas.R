@@ -39,7 +39,7 @@ plotar.grupos<-function(banco,cluster,ngrupo,grupo,shape){
 }
 
 plotar.tabela<-function(cluster,ngrupo,grupo){
-  grupoplotar<-cluster[[ngrupo]]
+  grupoplotar<-cluster[[ngrupo]][,c(1,3)]
   names(grupoplotar)<-c("Cancer","Grupo por kmeans")
   rownames(grupoplotar)<-NULL
   print(grupoplotar)
