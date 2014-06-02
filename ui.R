@@ -21,7 +21,7 @@ shinyUI(fluidPage(navbarPage("Canceres", id="nav",
                    tabPanel('Descritivas e graficos gerais',
                             fluidRow(
                               column(3,div(class="span3",
-                                           img(src="Old_Faithfull-wikijpg.jpg", height = "600px", width = "300px"))
+                                           img(src="figure/Old_Faithfull-wikijpg.jpg", height = "600px", width = "300px"))
                                      ))
                             
                             
