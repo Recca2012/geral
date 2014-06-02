@@ -1,5 +1,5 @@
 require(shiny)
-shinyUI(navbarPage("Superzip", id="nav",
+shinyUI(navbarPage("Canceres", id="nav",
                    tabPanel('Mapas dos Canceres',
                      
                      sidebarPanel(
@@ -45,7 +45,7 @@ shinyUI(navbarPage("Superzip", id="nav",
                      ),
                      mainPanel(
                        
-                       h4("SMR dos grupos"),
+                       h4("SMR dos centroides do grupo"),
                        plotOutput("plot1g"),
                        
                        h4("Tabela dos Canceres"),
