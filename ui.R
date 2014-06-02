@@ -1,7 +1,7 @@
 require(shiny)
 shinyUI(navbarPage("Superzip", id="nav",
-                   tabPanel(
-                     headerPanel('Mapas Cancer'),
+                   tabPanel('Mapas dos Canceres',
+                     
                      sidebarPanel(
                        selectInput('cancerm', 'Cancerm', names(Rate3)[-c(1,2)],selected=names(Rate3)[[3]])
                        
@@ -18,8 +18,8 @@ shinyUI(navbarPage("Superzip", id="nav",
                        plotOutput("plot3mapa")
                      )
                    ),
-                   tabPanel(
-                     headerPanel('Cancer'),
+                   tabPanel('Boxplot dos Canceres',
+                    
                      sidebarPanel(
                        selectInput('cancer', 'Cancer', names(Rate3)[-c(1,2)],selected=names(Rate3)[[3]])
                        
@@ -36,8 +36,8 @@ shinyUI(navbarPage("Superzip", id="nav",
                        plotOutput("plot3")
                      )
                    ),
-                   tabPanel(
-                     headerPanel('Cancer'),
+                   tabPanel('Grupo dos Canceres',
+                     
                      sidebarPanel(
                        numericInput('ngrupo', 'Numero de Grupos', value=2,min=1,max=100,step=1),
                        numericInput('grupo','Grupo de Interesse',value=1,min=1,max=100,step=1)
