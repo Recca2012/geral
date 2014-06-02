@@ -1,5 +1,5 @@
 require(shiny)
-shinyUI(navbarPage("Canceres", id="nav",
+shinyUI(fluidPage(navbarPage("Canceres", id="nav",
                    tabPanel('Mapas dos Canceres',
                      
                      sidebarPanel(
@@ -18,6 +18,14 @@ shinyUI(navbarPage("Canceres", id="nav",
                        plotOutput("plot3mapa")
                      )
                    ),
+                   tabPanel('Descritivas e graficos gerais',
+                            fluidRow(
+                              column(3,div(class="span3",
+                                           img(src="Old_Faithfull-wikijpg.jpg", height = "600px", width = "300px"))
+                                     ))
+                            
+                            
+                            ),
                    tabPanel('Boxplot dos Canceres',
                     
                      sidebarPanel(
@@ -53,4 +61,4 @@ shinyUI(navbarPage("Canceres", id="nav",
                        
                      )
                    )
-))
+)))
