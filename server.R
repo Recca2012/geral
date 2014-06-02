@@ -5,6 +5,9 @@ require(RCurl)
 u <- "https://raw.githubusercontent.com/Recca2012/grupos/master/mapas.R"
 script <- getURL(u, ssl.verifypeer = FALSE)
 eval(parse(text = script))
+u2 <- "https://raw.githubusercontent.com/Recca2012/descritivas/master/descritivas.R"
+script2 <- getURL(u2, ssl.verifypeer = FALSE)
+eval(parse(text = script2))
 
 shinyServer(function(input, output, session) {
   
