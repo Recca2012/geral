@@ -49,7 +49,7 @@ shinyUI(navbarPage("Superzip", id="nav",
                        plotOutput("plot1g"),
                        
                        h4("Tabela dos Canceres"),
-                       dataTableOutput(outputId="table")("tab1")
+                       dataTableOutput(outputId="tab1")
                        
                      )
                    )
