@@ -8,7 +8,7 @@ eval(parse(text = script))
 u2 <- "https://raw.githubusercontent.com/Recca2012/descritivas/master/descritivias.R"
 script2 <- getURL(u2, ssl.verifypeer = FALSE)
 eval(parse(text = script2))
-
+load("data/dados.RData",envir=.GlobalEnv)
 shinyServer(function(input, output, session) {
   
   # Combine the selected variables into a new data frame
