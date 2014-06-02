@@ -1,3 +1,4 @@
+require(shiny)
 shinyUI(navbarPage("Superzip", id="nav",
                    pageWithSidebar(
                      headerPanel('Mapas Cancer'),
