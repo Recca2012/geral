@@ -24,7 +24,7 @@ shinyUI(fluidPage(navbarPage("Canceres", id="nav",
                                            img(src="Old_Faithfull-wikijpg.jpg", height = "600px", width = "300px"))
                                      )),
                             
-                            img(src="incidencia-de-canceres-analise.jpg", height = "600px", width = "300px")
+                            img(src="incidencia-de-canceres-analise.jpg", height = "1800px", width = "900px")
                             
                             ),
                    tabPanel('Boxplot dos Canceres',
