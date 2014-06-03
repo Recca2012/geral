@@ -19,12 +19,9 @@ shinyUI(fluidPage(navbarPage("Canceres", id="nav",
                      )
                    ),
                    tabPanel('Descritivas e graficos gerais',
-                            fluidRow(
-                              column(3,div(class="span3",
-                                           img(src="Old_Faithfull-wikijpg.jpg", height = "600px", width = "300px"))
-                                     )),
-                            
-                            img(src="incidencia-de-canceres-analise.jpg", height = "1800px", width = "900px")
+                            img(src="incidencia-de-canceres-analise.jpg", height = "1800px", width = "900px"),
+                            img(src="porcentagem-acumulada-da-incidencia-analise.jpg", height = "1800px", width = "900px"),
+                            img(src="mapa-de-correlacao-analise.jpg", height = "900px", width = "900px")
                             
                             ),
                    tabPanel('Boxplot dos Canceres',
