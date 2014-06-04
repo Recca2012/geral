@@ -9,7 +9,7 @@ require(reshape)
 load(file="data/dados.RData")
 load(file="data/clusters.RData")
 # unlink(dest)
-plotar.mapa<-function(shape,dados){
+plotar.mapa<-function(shape,dados,smr=NULL){
   banco.plotar<-merge(shape,dados,by="State")
   names(banco.plotar)[5]<-"Cancer"
   p <- ggplot() + coord_fixed()
@@ -19,6 +19,8 @@ plotar.mapa<-function(shape,dados){
                                           y=lat,
                                           group=State,fill=Cancer))+ 
     scale_fill_continuous(low="steelblue",high="tomato")+
+    if(smr=="smr"){scale_fill_continuous(low="steelblue",high="tomato",limits=c(0,5))}+
+    
     theme(legend.position="right",
           panel.background = element_rect(fill = "white"),
           axis.title.x = element_blank(), 
