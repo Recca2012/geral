@@ -19,7 +19,6 @@ plotar.mapa<-function(shape,dados,smr=NULL){
                                           y=lat,
                                           group=State,fill=Cancer))+ 
     scale_fill_continuous(low="steelblue",high="tomato",limits=c(ifelse(sum(smr=="smr")==1,c(0),c(min(banco.plotar$Cancer))),ifelse(sum(smr=="smr")==1,c(5),c(max(banco.plotar$Cancer)))))+
-    if(){scale_fill_continuous(low="steelblue",high="tomato",limits=c(0,5))}+
     
     theme(legend.position="right",
           panel.background = element_rect(fill = "white"),
