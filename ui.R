@@ -25,7 +25,11 @@ shinyUI(fluidPage(navbarPage("Canceres", id="nav",
                             img(src="porcentagem-acumulada-da-incidencia-analise.jpg", height = "1800px", width = "900px"),
                             p("Percebemos que 8 canceres sao responsavei por 30% das incidencias. Sao necessarios 50 canceres para termos 90% da incidencia."),
                             img(src="mapa-de-correlacao-analise.jpg", height = "900px", width = "900px"),
-                            p("Existe uma alta correlacao entre os canceres como pode-se observar pelo mapa de calor. Existe uma correlacao maior que 0.75 em 942 combinacoes de canceres e ccorrelacao maior que 9 em 68 combinacoes.")
+                            p("Existe uma alta correlacao entre os canceres como pode-se observar pelo mapa de calor. Existe uma correlacao maior que 0.75 em 942 combinacoes de canceres e ccorrelacao maior que 9 em 68 combinacoes."),
+                            img(src="correlacao-entre-os-pares-de-canceres-por-quantidade", height = "1800px", width = "900px"),
+                            p("Existe 47 pares de canceres, feminino e masculino para um mesmo cancer em uma mesma raca.Podemos observar que existe um decaimento na correlacao quando a frequencia dos canceres diminui. Entretanto mesmo com esse decaimento apenas 2 pares de canceres apresentaram uma correlacao menor que 0.5, mas ainda assim, maior que 0.4. 19 canceres possuem uma correlacao maior que 0.9 e 30 uma correlacao maior que 0.8. No grafico dos pontos ordenados por correlacao vemos que a correlacao tem um decaimento lento ate o 43 e despenca apartir dele."),
+                            img(src="correlacao-entre-os-pares-de-canceres-por-correlacao.jpg"),
+                            p("Na proxima aba estao os boxplots para quantidade, taxa bayesiana e SMR de cada cancer.")
                             
                             ),
                    tabPanel('Boxplot dos Canceres',
@@ -50,7 +54,10 @@ shinyUI(fluidPage(navbarPage("Canceres", id="nav",
                      
                      sidebarPanel(
                        numericInput('ngrupo', 'Numero de Grupos', value=2,min=1,max=100,step=1),
-                       numericInput('grupo','Grupo de Interesse',value=1,min=1,max=100,step=1)
+                       numericInput('grupo','Grupo de Interesse',value=1,min=1,max=100,step=1),
+                       p("Abaixo encontra-se o grafico que mostra o decaimento da soma de quadrados a medida que os grupos sao formados. Para o calculo sao utilizados 1000 repeticoes, devido a semente aleatoria do kmeans"),
+                       img(src="soma-dos-quadrados-interna.jpg"),
+                       p("Percebemos que nao ha um decaimento rapido e uma estagnacao como seria o desejado. Entretanto percebemos que existe dois comportamentos, o primeiro e um rapido decaimento entre 1 e 7 canceres, apartir do oitavo a velocidade de decaimento começa e diminuir.")
                        
                      ),
                      mainPanel(
