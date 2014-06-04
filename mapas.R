@@ -14,6 +14,7 @@ plotar.mapa<-function(shape,dados,smr=NULL){
   names(banco.plotar)[5]<-"Cancer"
   p <- ggplot() + coord_fixed()
   
+  
   base_state <- p + geom_polygon(data=banco.plotar,title=(names(dados)[2]),#colour="white",
                                       aes(x=lon,
                                           y=lat,
