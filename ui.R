@@ -20,9 +20,12 @@ shinyUI(fluidPage(navbarPage("Canceres", id="nav",
                    ),
                    tabPanel('Descritivas e graficos gerais',
                             img(src="incidencia-de-canceres-analise.jpg", height = "1800px", width = "900px"),
-                            p("Os canceres são mostrados em ordem decrescente de frequencia. O cancer mais comum foi o Cancer no sistema genital masculino com uma frequencia de 2 milhoes nos anos em analise."),
+                            p("Os canceres são mostrados em ordem decrescente de frequencia. O cancer mais comum foi o Cancer de mama entre mulheres brancas seguido pelo cancer de prostata entre homens brancos. Isso aparamente contradiz o que se espera, que o cancer de pulmao seja o mais frequente, entretanto o site do SEER aponta que os canceres mais frequentes sao os canceres de prostata e mama, superando mesmo o pulmao."),
+                            p("Os cancerese mais frequentes sao em ordem decrescente sao mama entre mulheres brancas, prostata entre homens brancos, pulmao e bronquios entre homens brancos seguidos por mulheres brancas, bexiga entre homens brancso e mama in situ feminino entre mulheres brancas")
                             img(src="porcentagem-acumulada-da-incidencia-analise.jpg", height = "1800px", width = "900px"),
-                            img(src="mapa-de-correlacao-analise.jpg", height = "900px", width = "900px")
+                            p("Percebemos que 8 canceres sao responsavei por 30% das incidencias. Sao necessarios 50 canceres para termos 90% da incidencia.")
+                            img(src="mapa-de-correlacao-analise.jpg", height = "900px", width = "900px"),
+                            p("Existe uma alta correlacao entre os canceres como pode-se observar pelo mapa de calor. Existe uma correlacao maior que 0.75 em 942 combinacoes de canceres e ccorrelacao maior que 9 em 68 combinacoes.")
                             
                             ),
                    tabPanel('Boxplot dos Canceres',
