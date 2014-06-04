@@ -19,7 +19,7 @@ plotar.mapa<-function(shape,dados,smr=NULL){
                                           y=lat,
                                           group=State,fill=Cancer))+ 
     scale_fill_continuous(low="steelblue",high="tomato")+
-    if(smr=="smr"){scale_fill_continuous(low="steelblue",high="tomato",limits=c(0,5))}+
+    if(sum(smr=="smr")==1){scale_fill_continuous(low="steelblue",high="tomato",limits=c(0,5))}+
     
     theme(legend.position="right",
           panel.background = element_rect(fill = "white"),
@@ -34,10 +34,10 @@ plotar.mapa<-function(shape,dados,smr=NULL){
 
 
 
-plotar.grupos<-function(banco,cluster,ngrupo,grupo,shape){
+plotar.grupos<-function(banco,cluster,ngrupo,grupo,shape,smr=NULL){
   grupoplotar<-cluster[[ngrupo]][which(cluster[[ngrupo]]$kmeans==grupo),1]
   bancoplotar<-data.frame("State"=banco[,1],"Cancer"=rowMeans(as.matrix(banco[,which(names(banco) %in% grupoplotar)])))
-  plotar.mapa(shape=shape,dados=bancoplotar)
+  plotar.mapa(shape=shape,dados=bancoplotar,smr=smr)
 }
 
 plotar.tabela<-function(cluster,ngrupo,grupo){

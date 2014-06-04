@@ -33,7 +33,7 @@ shinyServer(function(input, output, session) {
     
   })
   output$plot3mapa<-renderPlot({
-    plotar.mapa(shape=shape2(),dados=dadosmrm())
+    plotar.mapa(shape=shape2(),dados=dadosmrm(),smr="smr")
     
   })
   
@@ -68,7 +68,7 @@ shinyServer(function(input, output, session) {
   banco.grupos2<-reactive({banco.grupos2})
   
   output$plot1g <- renderPlot({
-    plotar.grupos(banco=dados2(),cluster=banco.grupos,ngrupo=input$ngrupo,grupo=input$grupo,shape=shape2())
+    plotar.grupos(banco=dados2(),cluster=banco.grupos,ngrupo=input$ngrupo,grupo=input$grupo,shape=shape2(),smr="smr")
   })
   
   output$tab1<-renderDataTable({
