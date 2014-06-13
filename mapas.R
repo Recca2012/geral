@@ -59,7 +59,8 @@ plotar.tabela.dupla.entrada<-function(cluster,cluster1,cluster2,ngrupo1,ngrupo2)
   names(grupo1)<-c("Cancer","Cor-1","kmeans-1")
   names(grupo2)<-c("Cancer","Cor-2","kmeans-2")
   grupo<-merge(x=grupo1,y=grupo2,by="Cancer",all=T)
-  table(grupo$"kmeans-1",grupo$"kmeans-2")
+  tab<-table(grupo$"kmeans-1",grupo$"kmeans-2")
+  print(tab)
 }
 
 
