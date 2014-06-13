@@ -90,5 +90,23 @@ shinyUI(fluidPage(navbarPage("Canceres", id="nav",
                               dataTableOutput(outputId="tab1a")
                               
                             )
-                   )
+                   ),
+                   tabPanel('Comparacao entre os agrupamentos',
+                            sidebarPanel(
+                              selectInput('grupotab1', 'Primeiro Cluster', names(grupo.geral)),
+                              numericInput('ngrupo1','Numero de Agrupamentos Primeiro',value=2,min=2,max=100,step=1),
+                              selectInput('grupotab2', 'Segundo Cluster', names(grupo.geral)),
+                              numericInput('ngrupo2','Numero de Agrupamentos Segundo',value=2,min=2,max=100,step=1)
+                              ),
+                            
+                            mainPanel(
+                              
+                              h4("Tabela com as Classificacoes"),
+                              dataTableOutput(outputId="tab1a"),
+                              
+                              h4("Teste de Qui-Quadrado para os Grupos"),
+                              verbatimTextOutput(outputId="qui.teste")
+                              
+                              )
+                            )
 )))

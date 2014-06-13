@@ -11,6 +11,7 @@ eval(parse(text = script2))
 load("data/dados.RData",envir=.GlobalEnv)
 load(file="data/grupo-cancer-alterado.RData",envir=.GlobalEnv)
 load(file="data/grupo-cancer-real.RData",envir=.GlobalEnv)
+load(file="data/grupo-geral.RData",envir=.GlobalEnv)
 shinyServer(function(input, output, session) {
   
   # Combine the selected variables into a new data frame
@@ -81,8 +82,13 @@ shinyServer(function(input, output, session) {
     plotar.tabela(cluster=grupo.cancer.real,ngrupo=input$ngrupo,grupo=input$grupo)
   })
   
-  output$tab1a<-renderDataTable({
-    plotar.tabela(cluster=grupo.cancer.alterado,ngrupo=input$ngrupoa,grupo=input$grupoa)
+  output$tab1a<-renderTable({
+    plotar.tabela.dupla.entrada(cluster=grupo.geral,cluster1=input$grupotab1,cluster2=input$grupotab2,ngrupo1=input$ngrupo1,ngrupo2=input$ngrupo2)
+  })
+  
+  output$qui.teste<-renderPrint({
+    tabela<-plotar.tabela.dupla.entrada(cluster=grupo.geral,cluster1=input$grupotab1,cluster2=input$grupotab2,ngrupo1=input$ngrupo1,ngrupo2=input$ngrupo2)
+    chisq.test(tabela,simulate.p.value=T)
   })
   
   
