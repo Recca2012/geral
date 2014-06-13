@@ -68,10 +68,20 @@ shinyServer(function(input, output, session) {
   banco.grupos2<-reactive({banco.grupos2})
   
   output$plot1g <- renderPlot({
-    plotar.grupos(banco=dados2(),cluster=banco.grupos,ngrupo=input$ngrupo,grupo=input$grupo,shape=shape2(),smr="smr")
+    plotar.grupos(banco=dados2(),cluster=grupo.cancer.real,ngrupo=input$ngrupo,grupo=input$grupo,shape=shape2(),smr="smr")
+  })
+  
+  output$plot1ga <- renderPlot({
+    plotar.grupos(banco=dados2(),cluster=grupo.cancer.alterado,ngrupo=input$ngrupo,grupo=input$grupo,shape=shape2(),smr="smr")
   })
   
   output$tab1<-renderDataTable({
-    plotar.tabela(cluster=banco.grupos,ngrupo=input$ngrupo,grupo=input$grupo)
+    plotar.tabela(cluster=grupo.cancer.real,ngrupo=input$ngrupo,grupo=input$grupo)
   })
+  
+  output$tab1a<-renderDataTable({
+    plotar.tabela(cluster=grupo.cancer.alterado,ngrupo=input$ngrupo,grupo=input$grupo)
+  })
+  
+  
 })

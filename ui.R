@@ -69,5 +69,26 @@ shinyUI(fluidPage(navbarPage("Canceres", id="nav",
                        dataTableOutput(outputId="tab1")
                        
                      )
+                   ),
+                   
+                   tabPanel('Grupo dos Canceres Alterando a area de valor superior a 4',
+                            
+                            sidebarPanel(
+                              numericInput('ngrupo', 'Numero de Grupos', value=2,min=1,max=100,step=1),
+                              numericInput('grupo','Grupo de Interesse',value=1,min=1,max=100,step=1),
+                              p("Abaixo encontra-se o grafico que mostra o decaimento da soma de quadrados a medida que os grupos sao formados. Para o calculo sao utilizados 1000 repeticoes, devido a semente aleatoria do kmeans"),
+                              img(src="soma-dos-quadrados-interna-alterada.jpg"),
+                              p("Percebemos que nao ha um decaimento rapido e uma estagnacao como seria o desejado. Entretanto percebemos que existe dois comportamentos, o primeiro e um rapido decaimento entre 1 e 7 canceres, apartir do oitavo a velocidade de decaimento começa e diminuir.")
+                              
+                            ),
+                            mainPanel(
+                              
+                              h4("SMR dos centroides do grupo"),
+                              plotOutput("plot1ga"),
+                              
+                              h4("Tabela dos Canceres"),
+                              dataTableOutput(outputId="tab1a")
+                              
+                            )
                    )
 )))

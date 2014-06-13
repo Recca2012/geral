@@ -8,6 +8,10 @@ require(reshape)
 # download.file(down,dest,method="curl")
 load(file="data/dados.RData")
 load(file="data/clusters.RData")
+load(file="data/clusters-alterado.RData")
+load("grupo-cancer-alterado.RData")
+load("grupo-cancer-real.RData")
+
 # unlink(dest)
 plotar.mapa<-function(shape,dados,smr=NULL){
   banco.plotar<-merge(shape,dados,by="State")
