@@ -74,7 +74,7 @@ shinyServer(function(input, output, session) {
   })
   
   output$plot1ga <- renderPlot({
-    plotar.grupos(banco=dados2(),cluster=grupo.cancer.alterado,ngrupo=input$ngrupo,grupo=input$grupo,shape=shape2(),smr="smr")
+    plotar.grupos(banco=dados2(),cluster=grupo.cancer.alterado,ngrupo=input$ngrupoa,grupo=input$grupoa,shape=shape2(),smr="smr")
   })
   
   output$tab1<-renderDataTable({
@@ -82,7 +82,7 @@ shinyServer(function(input, output, session) {
   })
   
   output$tab1a<-renderDataTable({
-    plotar.tabela(cluster=grupo.cancer.alterado,ngrupo=input$ngrupo,grupo=input$grupo)
+    plotar.tabela(cluster=grupo.cancer.alterado,ngrupo=input$ngrupoa,grupo=input$grupoa)
   })
   
   
