@@ -9,8 +9,8 @@ require(reshape)
 load(file="data/dados.RData")
 load(file="data/clusters.RData")
 load(file="data/clusters-alterado.RData")
-load(file="grupo-cancer-alterado.RData")
-load(file="grupo-cancer-real.RData")
+load(file="data/grupo-cancer-alterado.RData")
+load(file="data/grupo-cancer-real.RData")
 
 # unlink(dest)
 plotar.mapa<-function(shape,dados,smr=NULL){
