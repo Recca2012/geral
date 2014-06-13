@@ -102,7 +102,7 @@ shinyUI(fluidPage(navbarPage("Canceres", id="nav",
                             mainPanel(
                               
                               h4("Tabela com as Classificacoes"),
-                              dataTableOutput(outputId="tab1a"),
+                              tableOutput(outputId="tab.comp"),
                               
                               h4("Teste de Qui-Quadrado para os Grupos"),
                               verbatimTextOutput(outputId="qui.teste")

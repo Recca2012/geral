@@ -82,7 +82,13 @@ shinyServer(function(input, output, session) {
     plotar.tabela(cluster=grupo.cancer.real,ngrupo=input$ngrupo,grupo=input$grupo)
   })
   
-  output$tab1a<-renderTable({
+  output$tab1a<-renderDataTable({
+    plotar.tabela(cluster=grupo.cancer.alterado,ngrupo=input$ngrupo,grupo=input$grupo)
+  })
+  
+  
+  
+  output$tab1.comp<-renderTable({
     plotar.tabela.dupla.entrada(cluster=grupo.geral,cluster1=input$grupotab1,cluster2=input$grupotab2,ngrupo1=input$ngrupo1,ngrupo2=input$ngrupo2)
   })
   
