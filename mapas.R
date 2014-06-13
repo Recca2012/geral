@@ -39,7 +39,7 @@ plotar.mapa<-function(shape,dados,smr=NULL){
 
 
 plotar.grupos<-function(banco,cluster,ngrupo,grupo,shape,smr="smr"){
-  grupoplotar<-cluster[[ngrupo]][which(cluster[[ngrupo]]$kmeans==grupo),1]
+  grupoplotar<-cluster[[ngrupo]][which(cluster[[ngrupo]]$Real==grupo),1]
   bancoplotar<-data.frame("State"=banco[,1],"Cancer"=rowMeans(as.matrix(banco[,which(names(banco) %in% grupoplotar)])))
   plotar.mapa(shape=shape,dados=bancoplotar,smr=smr)
 }
